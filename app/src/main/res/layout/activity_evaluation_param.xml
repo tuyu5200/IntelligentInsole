@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_evaluation_param"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.octave.intelligentinsole.activity.EvaluationParamActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <com.octave.intelligentinsole.views.DrawPressurePath
+            android:id="@+id/left"
+            android:layout_width="wrap_content"
+            android:layout_height="350dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            app:backgroundsrc="@drawable/leftfoot"
+            app:draw_color="@color/white"
+            app:drawmode="draw_point"
+            app:lineweight="2dp" />
+
+        <com.octave.intelligentinsole.views.DrawPressurePath
+            android:id="@+id/right"
+            android:layout_width="wrap_content"
+            android:layout_height="350dp"
+            android:layout_margin="20dp"
+            android:layout_weight="1"
+            app:antialias="false"
+            app:backgroundsrc="@drawable/rightfoot"
+            app:draw_color="@color/white"
+            app:drawmode="draw_point"
+            app:isflip_horizontal="true"
+            app:lineweight="3dp" />
+    </LinearLayout>
+</RelativeLayout>

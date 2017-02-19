@@ -11,13 +11,13 @@ public class Lv1EntityOfMain implements MultiItemEntity {
     private int imgId;
     private String title;
     private int btnBcId;
-    private Object intentClass;
+    private Class intentClass;
 
-    public Object getIntentClass() {
+    public Class getIntentClass() {
         return intentClass;
     }
 
-    public void setIntentClass(Object intentClass) {
+    public void setIntentClass(Class intentClass) {
         this.intentClass = intentClass;
     }
 
@@ -45,7 +45,7 @@ public class Lv1EntityOfMain implements MultiItemEntity {
         this.btnBcId = btnBcId;
     }
 
-    public Lv1EntityOfMain(int imgId, String title, int btnBcId, Object intentClass) {
+    public Lv1EntityOfMain(int imgId, String title, int btnBcId, Class intentClass) {
         this.imgId = imgId;
         this.title = title;
         this.btnBcId = btnBcId;

@@ -68,7 +68,8 @@ public class ItemOfMainAdapter extends BaseMultiItemQuickAdapter<MultiItemEntity
                     @Override
                     public void onClick(View v) {
                         if (lv1.getIntentClass()!= null) {
-                            Intent intent = new Intent(v.getContext(), lv1.getIntentClass().getClass());
+                            System.out.println(lv1.getIntentClass().getClass());
+                            Intent intent = new Intent(v.getContext(), lv1.getIntentClass());
                             v.getContext().startActivity(intent);
                         } else {
                             Toast.makeText(v.getContext(), "null", Toast.LENGTH_SHORT).show();

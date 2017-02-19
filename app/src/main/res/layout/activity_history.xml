@@ -5,7 +5,7 @@
     android:id="@+id/activity_history"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.octave.coordinate.activity.HistoryActivity">
+    tools:context="com.octave.intelligentinsole.activity.HistoryActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
