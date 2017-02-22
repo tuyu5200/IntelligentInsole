@@ -15,6 +15,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.support.annotation.ColorInt;
+import android.support.design.widget.Snackbar;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
@@ -102,7 +103,8 @@ public class DrawPressurePath extends SurfaceView implements SurfaceHolder.Callb
         setFocusableInTouchMode(true);
         //设置常量
         setKeepScreenOn(true);
-        setZOrderOnTop(true);
+        if (!isInEditMode())
+            setZOrderOnTop(true);
         //初始化控件View属性
         initAttrs(attrs);
 
@@ -369,9 +371,13 @@ public class DrawPressurePath extends SurfaceView implements SurfaceHolder.Callb
         }
         mGesturePaint.setStyle(Paint.Style.FILL);
 
-        for (int i = 0; i < mRects.length; i++) {
-            mGesturePaint.setColor(mRects[i].getColor());
-            mCanvas.drawRect(mRects[i].getRect(), mGesturePaint);
+        try {
+            for (int i = 0; i < mRects.length; i++) {
+                mGesturePaint.setColor(mRects[i].getColor());
+                mCanvas.drawRect(mRects[i].getRect(), mGesturePaint);
+            }
+        } catch (Exception e) {
+            Snackbar.make(getRootView(), e.toString(), Snackbar.LENGTH_SHORT).show();
         }
 //        for (int i = 0; i < mRects.length; i++) {
 //            if(i!=mRectPosition) {
