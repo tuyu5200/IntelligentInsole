@@ -6,4 +6,14 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+
+    <style name="Theme.AppCompat.Transparent" parent="Theme.AppCompat.Dialog">
+        <item name="android:windowIsTranslucent">true</item><!--对话框的背景-->
+        <item name="android:windowBackground">@android:color/transparent</item> <!--对话框是否透明-->
+        <item name="android:windowContentOverlay">@null</item><!--对话框是否有遮盖-->
+        <item name="android:windowNoTitle">true</item><!--对话框有无标题-->
+        <item name="android:windowIsFloating">true</item><!--对话框是否浮动-->
+        <item name="android:backgroundDimEnabled">true</item> <!--是否允许对话框背景变暗-->
+    </style>
 </resources>

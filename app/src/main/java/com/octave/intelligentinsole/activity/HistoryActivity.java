@@ -1,9 +1,9 @@
 package com.octave.intelligentinsole.activity;
 
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -45,18 +45,17 @@ public class HistoryActivity extends BaseActivity {
     private ColChart mColChartView;
     @Override
     public void initData() {
-        addLineChart(this);
-
         rvHistoryList.setLayoutManager(new LinearLayoutManager(this));
-
         rvHistoryList.setAdapter(new ItemHistoryAdapter(R.layout.item_history, R.layout.item_header, getList(datas)));
+
+        mColChartView = new ColChart(this);
+        mLineChartView = new LineChart(this);
+        addLineChart(this);
 
         rvHistoryList.addOnItemTouchListener(new OnItemClickListener() {
             @Override
             public void SimpleOnItemClick(BaseQuickAdapter baseQuickAdapter, View view, int i) {
-                Intent intent = new Intent(HistoryActivity.this, LineDependColumnActivity.class);
-                startActivity(intent, ActivityOptions.makeSceneTransitionAnimation(HistoryActivity.this,view,"LineDependColumn").toBundle());
-
+            baseSnackBar("Add click method");
             }
         });
 
@@ -73,10 +72,25 @@ public class HistoryActivity extends BaseActivity {
                 isLineChart = !isLineChart;
             }
         });
+        mLineChartView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HistoryActivity.this, LineDependColumnActivity.class);
+                startActivity(intent, ActivityOptionsCompat
+                        .makeSceneTransitionAnimation(HistoryActivity.this,v,"LineDependColumn").toBundle());
+            }
+        });
+        mColChartView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HistoryActivity.this, LineDependColumnActivity.class);
+                startActivity(intent, ActivityOptionsCompat
+                        .makeSceneTransitionAnimation(HistoryActivity.this,v,"LineDependColumn").toBundle());
+            }
+        });
     }
     private void addColChart(Context context) {
         mChartGroup.removeAllViews();
-        mColChartView = new ColChart(context);
         //设定的是x=7即一周中每一天的个数
         mColChartView.initData();
         mChartGroup.addView(mColChartView.getmColumnChartView());
@@ -84,7 +98,6 @@ public class HistoryActivity extends BaseActivity {
 
     private void addLineChart(Context context) {
         mChartGroup.removeAllViews();
-        mLineChartView = new LineChart(context);
         //设定的是x=7即一周中每一天的个数
         mLineChartView.initData();
         //mLineChartView.initData(float[][] data,String[] axisX)

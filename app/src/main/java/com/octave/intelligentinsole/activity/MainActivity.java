@@ -138,8 +138,12 @@ public class MainActivity extends BaseActivity {
         lv1 = new Lv1EntityOfMain(R.drawable.ic_walk, "还有啥", R.drawable.ic_chevron_right, null);
         lv0.addSubItem(lv1);
         res.add(lv0);
-        lv0 = new Lv0EntityOfMain(R.drawable.ic_walk, "设备连接", R.drawable.ic_chevron_right);
-        lv1 = new Lv1EntityOfMain(R.drawable.ic_walk, "设备连接", R.drawable.ic_chevron_right, null);
+        lv0 = new Lv0EntityOfMain(R.drawable.ic_walk, "评估参数", R.drawable.ic_chevron_right);
+        lv1 = new Lv1EntityOfMain(R.drawable.ic_walk, "评估参数", R.drawable.ic_chevron_right, null);
+        lv0.addSubItem(lv1);
+        res.add(lv0);
+        lv0 = new Lv0EntityOfMain(R.drawable.ic_walk, "评估参数", R.drawable.ic_chevron_right);
+        lv1 = new Lv1EntityOfMain(R.drawable.ic_walk, "评估参数", R.drawable.ic_chevron_right, null);
         lv0.addSubItem(lv1);
         res.add(lv0);
         return res;
