@@ -100,7 +100,7 @@ public class RunActivity extends BaseActivity {
                     //将结束按钮移除
                     llRunBtnGroup.removeView(finishBtn);
                     //开始计时
-                    Snackbar.make(view, "Start!!!!!!", Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, "Start...", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 } else {
                     //计时器中断计时
@@ -116,7 +116,7 @@ public class RunActivity extends BaseActivity {
                     llRunBtnGroup.addView(finishBtn);
                     btnRunSwitch.setBackgroundResource(R.drawable.ic_play);
                     //Will pause
-                    Snackbar.make(view, "Pause!!!!!!", Snackbar.LENGTH_LONG)
+                    Snackbar.make(view, "Pause...", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show();
                 }
                 isStart = !isStart;
